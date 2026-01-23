@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head> <title></title>
+    <style>
+        body{
+            background-color: #14010f;
+            overflow: hidden;
+        }
+
+     .filter{
+            opacity: 0.3;
+            z-index: 5;
+            position: absolute;
+            width: 100vw;
+            height:100vh;
+            pointer-events: none;
+        }
+
+          .image{ 
+            position: absolute;
+            right: 0;
+            display: flex;
+            align-items: flex-end;
+            margin-top: 20%;
+            width: 750px;
+            height: 1050px;
+            z-index: 1;
+              transform-origin: right center;
+        }
+
+        .image img{
+             bottom: 0;
+    left: 0;
+            transition: transform 0.5s ease-out;
+            width: 100%;
+        }
+
+
+        .selection{
+            translate: 20px 400px;
+            z-index: 3;
+            position: absolute;
+        }
+
+        .menu-outline{
+            position: absolute;
+            width: 300px;
+            height: 1000px;
+            display: grid;
+               grid-template-columns: repeat(1, 280px);
+            grid-template-rows: repeat(5, 200px);
+        }
+
+        .item-01{
+            background-color: #fff200;
+            clip-path: polygon(28% 3%, 0 0, 3% 45%, 0 80%, 23% 83%, 47% 81%, 67% 90%, 100% 100%, 98% 56%, 100% 0, 73% 12%, 51% 8%);
+        }
+        
+        .item-02{ 
+            background-color: #fff200;
+            clip-path: polygon(2% 46%, 0 2%, 25% 8%, 49% 6%, 69% 16%, 100% 26%, 98% 54%, 100% 80%, 71% 83%, 36% 93%, 0 100%, 2% 65%);
+        }
+        
+        .item-03{
+            background-color:  #fff200;
+           clip-path: polygon(38% 20%, 0 29%, 2% 39%, 0 79%, 24% 86%, 48% 85%, 66% 91%, 100% 100%, 99% 41%, 100% 20%, 100% 0, 74% 5%);
+        }
+        
+        .item-04{
+             background-color:  #fff200;
+           clip-path: polygon(21% 12%, 0 0, 2% 39%, 0 100%, 25% 94%, 47% 90%, 74% 89%, 100% 81%, 99% 66%, 97% 48%, 100% 31%, 45% 14%);
+        }
+        
+        .item-05{
+            background-color:  #fff200; 
+            clip-path: polygon(18% 20%, 0 28%, 2% 49%, 0 100%, 16% 97%, 37% 94%, 100% 100%, 97% 83%, 99% 66%, 100% 0, 77% 15%, 40% 15%);
+        }
+
+        .item-01,.item-02,.item-03,.item-04,.item-05{
+            scale: 1.05;
+        }
+
+          .menu{
+            z-index: 1;
+            width: 300px;
+            height: 1000px;
+            display: grid;
+            justify-items: center;
+            grid-template-columns: repeat(1, 280px);
+            grid-template-rows: repeat(5, 200px);
+        }
+
+        .item-1 img, .item-2 img, .item-3 img, .item-4 img, .item-5 img{
+            width: 100%;
+            height: 100%;
+            filter: grayscale(100%);
+        }
+        .item-1{
+            background-color: #080005;
+            clip-path: polygon(28% 3%, 0 0, 3% 45%, 0 80%, 23% 83%, 47% 81%, 67% 90%, 100% 100%, 98% 56%, 100% 0, 73% 12%, 51% 8%);
+        }
+        
+        .item-2{ 
+            background-color:  #080005;
+            clip-path: polygon(2% 46%, 0 2%, 25% 8%, 49% 6%, 69% 16%, 100% 26%, 98% 54%, 100% 80%, 71% 83%, 36% 93%, 0 100%, 2% 65%);
+        }
+        
+        .item-3{
+            background-color:  #080005;
+           clip-path: polygon(38% 20%, 0 29%, 2% 39%, 0 79%, 24% 86%, 48% 85%, 66% 91%, 100% 100%, 99% 41%, 100% 20%, 100% 0, 74% 5%);
+        }
+        
+        .item-4{
+             background-color:  #080005;
+           clip-path: polygon(21% 12%, 0 0, 2% 39%, 0 100%, 25% 94%, 47% 90%, 74% 89%, 100% 81%, 99% 66%, 97% 48%, 100% 31%, 45% 14%);
+        }
+        
+        .item-5{
+            background-color: #080005;
+            clip-path: polygon(18% 20%, 0 28%, 2% 49%, 0 100%, 16% 97%, 37% 94%, 100% 100%, 97% 83%, 99% 66%, 100% 0, 77% 15%, 40% 15%);
+        }
+
+        #title{
+            margin-top: 10%;
+            position: absolute;
+            width: 100vw;
+            rotate: -10deg;
+        }
+
+        .star-1{
+              translate: 50px;
+            position: absolute;
+            width: 20%;
+            rotate: -40deg;
+        }
+
+         .star-2{
+            translate: 260px 60px;
+            position: absolute;
+            width: 10%;
+            rotate: 10deg;
+        }
+
+          .star-3{
+            z-index: 4;
+            translate: 180px 350px;
+            position: absolute;
+            width: 10%;
+            rotate: 5deg;
+        }
+
+        .star-4{
+            overflow: hidden;
+            z-index: 4;
+            translate: 790px 185px;
+            position: absolute;
+            width: 20%;
+            rotate: 10deg;
+        }
+
+        .star-5{
+            z-index: 4;
+            translate: 850px 400px;
+            position: absolute;
+            width: 10%;
+            rotate: 15deg;
+        }
+
+         .star-6{
+            z-index: 4;
+            translate: 5px 990px;
+            position: absolute;
+            width: 10%;
+            rotate: 5deg;
+        }
+
+         .star-7{
+            z-index: 4;
+            translate: 5px 1300px;
+            position: absolute;
+            width: 15%;
+            rotate: 5deg;
+        }
+
+        #date h1{
+            font-family: "fantasy";
+            background-color: aliceblue;
+            width: 12%;
+            padding: 5px;
+        }
+
+        /*div{
+            border: red 10px solid;
+        }*/
+        
+    </style></head>
+    <body>
+        <img src="filter.jpg" class="filter"> 
+        <img src="star2.png" class="star-1">
+        <img src="star2.png" class="star-2">
+        <img src="star2.png" class="star-3">
+        <img src="star2.png" class="star-4">
+        <img src="star1.png" class="star-5">
+        <img src="star2.png" class="star-6">
+        <img src="star1.png" class="star-7">
+
+        <img src="title.png" id="title">
+
+        <div class="selection">
+         <div class="menu-outline">
+            <div class="item-01"></div>
+            <div class="item-02"></div>
+            <div class="item-03"></div>
+            <div class="item-04"></div>
+            <div class="item-05"></div>
+        </div>
+        <div class="menu">
+            <div class="item-1"><img src="e1.png" onclick="Change('1')"></div>
+            <div class="item-2"><img src="e2.png" onclick="Change('2')"></div>
+            <div class="item-3"><img src="e3.png" onclick="Change('3')"></div>
+            <div class="item-4"><img src="e4.png" onclick="Change('4')"></div>
+            <div class="item-5"><img src="e1.png" onclick="Change('5')"></div>
+        </div>
+        </div>
+    
+        <div class="image"><img src="p1.png" id="active"></div>
+    
+    </body>
+    <script>
+        function Change(character){
+            switch(character){
+                case '1':
+                    document.getElementById("active"). src = "p1.png";
+                    break;
+                
+                case '2':
+                    document.getElementById("active"). src = "p2.png";
+                    break;
+
+                 case '3':
+                    document.getElementById("active"). src = "p3.png";
+                    break;
+
+                 case '4':
+                    document.getElementById("active"). src = "p4.png";
+                    break;
+
+                 case '5':
+                    document.getElementById("active"). src = "p5.png";
+                    break;
+                    
+            }
+        }
+    </script>
+</html>
