@@ -2,37 +2,40 @@
 <html>
     <head> <title></title>
     <style>
+
+        html, body{
+        overflow-x: hidden;
+        }
+
         body{
-            background-color: #14010f;
-            overflow: hidden;
+        background-color: #14010f;
+        display: flex;
+        flex-direction: column;
         }
 
      .filter{
+             position: fixed;
+             inset: 0;
+             width: 100vw;
+            height: 100vh;
             opacity: 0.3;
             z-index: 5;
-            position: absolute;
-            width: 100vw;
-            height:100vh;
-            pointer-events: none;
+             pointer-events: none;
+            object-fit: cover;
         }
 
           .image{ 
-            position: absolute;
-            right: 0;
-            display: flex;
-            align-items: flex-end;
-            margin-top: 20%;
-            width: 750px;
-            height: 1050px;
-            z-index: 1;
-              transform-origin: right center;
+             position: relative;
+             width: min(80vw, 900px);
+             margin-left: auto;
+             margin-top: min(15vh, 800px);
         }
 
         .image img{
-             bottom: 0;
-    left: 0;
-            transition: transform 0.5s ease-out;
             width: 100%;
+            height: auto;
+            display: block;
+
         }
 
 
@@ -47,7 +50,7 @@
             width: 300px;
             height: 1000px;
             display: grid;
-               grid-template-columns: repeat(1, 280px);
+            grid-template-columns: repeat(1, 280px);
             grid-template-rows: repeat(5, 200px);
         }
 
@@ -123,44 +126,49 @@
         #title{
             margin-top: 10%;
             position: absolute;
-            width: 100vw;
+            width: 100%;
             rotate: -10deg;
         }
 
         .star-1{
-              translate: 50px;
+            left: 50px;
             position: absolute;
             width: 20%;
             rotate: -40deg;
         }
 
          .star-2{
-            translate: 260px 60px;
+            left: 250px; 
+            top: 30px;
             position: absolute;
             width: 10%;
-            rotate: 10deg;
+            rotate: 30deg;
         }
 
           .star-3{
             z-index: 4;
-            translate: 180px 350px;
+            left: 180px;
+            top: 380px;
             position: absolute;
             width: 10%;
-            rotate: 5deg;
+            rotate: -5deg;
         }
 
         .star-4{
             overflow: hidden;
             z-index: 4;
-            translate: 790px 185px;
+            right: 0;
+            top: 195px;
             position: absolute;
             width: 20%;
             rotate: 10deg;
         }
 
         .star-5{
+
             z-index: 4;
-            translate: 850px 400px;
+            right: 0;
+            top: 450px;
             position: absolute;
             width: 10%;
             rotate: 15deg;
@@ -168,7 +176,8 @@
 
          .star-6{
             z-index: 4;
-            translate: 5px 990px;
+            left: 5px; 
+            top: 1040px;
             position: absolute;
             width: 10%;
             rotate: 5deg;
@@ -176,10 +185,11 @@
 
          .star-7{
             z-index: 4;
-            translate: 5px 1300px;
+            left: 5px;
+            top: 1300px;
             position: absolute;
             width: 15%;
-            rotate: 5deg;
+            rotate: 10deg;
         }
 
         #date h1{
@@ -189,10 +199,26 @@
             padding: 5px;
         }
 
+        
+        footer {
+        z-index: 2;
+        font-family: Fantasy;
+        font-size: 40px;
+        margin-top: auto;
+        color: rgb(255, 255, 255);
+        text-align: right;
+        padding: 10px;
+        }
+
         /*div{
             border: red 10px solid;
         }*/
-        
+
+        @media screen and (min-device-width: 1200px) {
+            .image{ 
+             margin-top: min(30vh, 1000px);
+        }
+        }
     </style></head>
     <body>
         <img src="filter.jpg" class="filter"> 
@@ -224,7 +250,7 @@
         </div>
     
         <div class="image"><img src="p1.png" id="active"></div>
-    
+        <footer>@TECHWORK | 01/24/26</footer>
     </body>
     <script>
         function Change(character){
